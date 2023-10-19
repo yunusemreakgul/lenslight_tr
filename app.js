@@ -15,8 +15,9 @@ const port = 3001;
 app.set("view engine", "ejs");
 
 app.use(express.static('public'));
-app.use('/photos', photoRoute);
+app.use(express.json());
 
+app.use('/photos', photoRoute);
 app.use('/', pageRoute);
 
 app.listen(port, () => {
